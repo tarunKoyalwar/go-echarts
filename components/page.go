@@ -42,13 +42,6 @@ func NewPage() *Page {
 	return page
 }
 
-// SetSpacerHeight sets the height of the spacer element. it is used between charts in the page.
-// The default value is 10px.
-func (page *Page) SetSpacerHeight(height string) *Page {
-	page.SpacerHeight = height
-	return page
-}
-
 // SetLayout sets the layout of the Page.
 func (page *Page) SetLayout(layout Layout) *Page {
 	page.Layout = layout

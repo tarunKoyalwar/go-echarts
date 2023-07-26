@@ -77,7 +77,8 @@ type BaseConfiguration struct {
 
 	GridList []opts.Grid `json:"grid,omitempty"`
 
-	Caption string // Adds a caption to the chart
+	Caption      string // Adds a caption to the chart
+	SpacerHeight string // Adds a spacer below Caption
 }
 
 // BaseActions represents a dispatchAction set needed by all chart types.
@@ -89,6 +90,11 @@ type BaseActions struct {
 // Add Description/Caption to the chart
 func (bc *BaseConfiguration) SetCaption(caption string) {
 	bc.Caption = caption
+}
+
+// Add a spacer below the caption
+func (bc *BaseConfiguration) SetSpacerHeight(height string) {
+	bc.SpacerHeight = height
 }
 
 // JSON wraps all the options to a map so that it could be used in the base template
