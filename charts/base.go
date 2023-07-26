@@ -76,12 +76,19 @@ type BaseConfiguration struct {
 	hasBrush      bool
 
 	GridList []opts.Grid `json:"grid,omitempty"`
+
+	Caption string // Adds a caption to the chart
 }
 
 // BaseActions represents a dispatchAction set needed by all chart types.
 type BaseActions struct {
 	actions.Type  `json:"type,omitempty"`
 	actions.Areas `json:"areas,omitempty"`
+}
+
+// Add Description/Caption to the chart
+func (bc *BaseConfiguration) SetCaption(caption string) {
+	bc.Caption = caption
 }
 
 // JSON wraps all the options to a map so that it could be used in the base template

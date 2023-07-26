@@ -2,6 +2,9 @@
 <div class="container">
     <div class="item" id="{{ .ChartID }}" style="width:{{ .Initialization.Width }};height:{{ .Initialization.Height }};"></div>
 </div>
+ {{ if .Caption }}
+        <div class="chart-caption" style="text-align: center; font-size: 14px; color: #333;">{{ .Caption }}</div>
+ {{ end }}
 
 <script type="text/javascript">
     "use strict";

@@ -4,12 +4,22 @@
     {{- template "header" . }}
 <body>
 {{ if eq .Layout "none" }}
-    {{- range .Charts }} {{ template "base" . }} {{- end }}
+    {{- range .Charts }}
+    {{ template "base" . }}
+     {{ if .SpacerHeight }}
+     <div style="width: 10px; height: {{ .SpacerHeight }};"></div>
+    {{ end }}
+    {{- end }}
 {{ end }}
 
 {{ if eq .Layout "center" }}
     <style> .container {display: flex;justify-content: center;align-items: center;} .item {margin: auto;} </style>
-    {{- range .Charts }} {{ template "base" . }} {{- end }}
+    {{- range .Charts }}
+     {{ template "base" . }}
+      {{ if .SpacerHeight }}
+     <div style="width: 10px; height: {{ .SpacerHeight }};"></div>
+    {{ end }}
+    {{- end }}
 {{ end }}
 
 {{ if eq .Layout "flex" }}
