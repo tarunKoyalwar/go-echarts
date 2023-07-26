@@ -27,8 +27,9 @@ type Page struct {
 	opts.Initialization
 	opts.Assets
 
-	Charts []interface{}
-	Layout Layout
+	Charts       []interface{}
+	Layout       Layout
+	SpacerHeight string
 }
 
 // NewPage creates a new page.
@@ -37,6 +38,14 @@ func NewPage() *Page {
 	page.Assets.InitAssets()
 	page.Renderer = render.NewPageRender(page, page.Validate)
 	page.Layout = PageCenterLayout
+	page.SpacerHeight = "10px"
+	return page
+}
+
+// SetSpacerHeight sets the height of the spacer element. it is used between charts in the page.
+// The default value is 10px.
+func (page *Page) SetSpacerHeight(height string) *Page {
+	page.SpacerHeight = height
 	return page
 }
 
